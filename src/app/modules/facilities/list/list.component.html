@@ -1,0 +1,51 @@
+<p>list works!</p>
+<!-- <button (click)="addDummyFacility()">Add Dummy
+    Facilities</button> -->
+
+<!-- <div class="container" *ngFor="let facility of facilities">
+    <ng-container>
+        <h3 [title]="'Facility id: '+ facility.id "> {{facility.name}} </h3>
+        <p *ngIf="facility.description">
+        Description: {{ facility.description }}
+        </p>
+
+        <button (click)="pickFacility(facility)"> show </button>
+
+        <button (click)="pickFacilityByID(facility)">facility id</button>
+    </ng-container>
+</div> -->
+
+<h1> {{pickedFacilityName}} </h1>
+<div class="container">
+
+    <div class="row g-4  "  >
+      <div class="col-12 col-md-6 col-lg-4  " *ngFor="let facility of facilitiesList ">
+        <div class="card h-80  ">
+          <div class="card-body" text-center >
+            <h5 class="card-title text-center"[title]="'Facility id:  '+ facility.id ">{{facility.name}}</h5>
+
+            <p class="card-text" *ngIf="facility.description ">
+              Description: {{ facility.description }}
+          </p>
+              <div *ngIf="facility.instrumentList.length > 0">
+
+                  <ul>
+
+                      <li *ngFor="let instrument of facility.instrumentList">{{instrument.name}}</li>
+                  </ul>
+              </div>
+
+            <button  (click)="pickFacility(facility)">Show</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+ <!--
+    To do :
+    - bold title
+    -show the instrument
+  -->
